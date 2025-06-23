@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11Frai - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>11Frai</h1>
+            <span id="restauranteAtual">Burguer Master</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="principal.html" class="active">Início</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#" id="logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <section class="welcome-section">
+            <h2>Bem-vindo ao Sistema 11Frai</h2>
+            <p>Gerencie pedidos, clientes e entregas para o restaurante <span id="restauranteNome">Burguer Master</span>.</p>
+        </section>
+
+        <div class="quick-actions">
+            <a href="pedidos.html?action=new" class="action-card">
+                <h3>Novo Pedido</h3>
+                <p>Crie um novo agendamento de delivery</p>
+            </a>
+            <a href="clientes.html" class="action-card">
+                <h3>Clientes</h3>
+                <p>Gerencie clientes cadastrados</p>
+            </a>
+            <a href="pedidos.html" class="action-card">
+                <h3>Pedidos Hoje</h3>
+                <p>Visualize agendamentos do dia</p>
+            </a>
+            <a href="restaurantes.html" class="action-card">
+                <h3>Restaurantes</h3>
+                <p>Altere ou gerencie restaurantes</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 11Frai - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11Frai - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>11Frai</h1>
+            <p>Agendamento de Delivery's</p>
+        </div>
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="restaurante">Restaurante</label>
+                <select id="restaurante" name="restaurante" required>
+                    <option value="">Selecione um restaurante</option>
+                    <option value="1">Burguer Master</option>
+                    <option value="2">Pizza Prime</option>
+                    <option value="3">Sushi Delivery</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-login">Entrar</button>
+            <p class="register-link">Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </form>
+    </div>
+
+    <footer class="login-footer">
+        <p>&copy; 2025 11Frai - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11Frai - Restaurantes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>11Frai</h1>
+            <span id="restauranteAtual">Burguer Master</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="principal.html">Início</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="restaurantes.html" class="active">Restaurantes</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#" id="logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="crud-container">
+        <h2>Gerenciar Restaurantes</h2>
+        
+        <div class="crud-actions">
+            <button class="btn-add" onclick="openRestauranteModal('add')">Novo Restaurante</button>
+            <input type="text" id="searchRestaurante" placeholder="Buscar restaurante...">
+        </div>
+
+        <div class="restaurante-grid">
+            <div class="restaurante-card selected">
+                <h3>Burguer Master</h3>
+                <p>Lanches • Hamburgueres</p>
+                <p>11 9999-8888</p>
+                <div class="restaurante-actions">
+                    <button class="btn-edit" onclick="openRestauranteModal('edit', 1)">Editar</button>
+                    <button class="btn-select" onclick="selectRestaurante(1)">Selecionar</button>
+                </div>
+            </div>
+            
+            <div class="restaurante-card">
+                <h3>Pizza Prime</h3>
+                <p>Pizzas • Massas</p>
+                <p>11 9999-7777</p>
+                <div class="restaurante-actions">
+                    <button class="btn-edit" onclick="openRestauranteModal('edit', 2)">Editar</button>
+                    <button class="btn-select" onclick="selectRestaurante(2)">Selecionar</button>
+                </div>
+            </div>
+            
+            <!-- Mais restaurantes seriam adicionados dinamicamente -->
+        </div>
+
+        <!-- Modal para adicionar/editar restaurantes -->
+        <div id="restauranteModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeRestauranteModal()">&times;</span>
+                <h3 id="restauranteModalTitle">Novo Restaurante</h3>
+                <form id="restauranteForm">
+                    <input type="hidden" id="restauranteId">
+                    <div class="form-group">
+                        <label for="restauranteNome">Nome do Restaurante</label>
+                        <input type="text" id="restauranteNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="restauranteCategoria">Categoria</label>
+                        <input type="text" id="restauranteCategoria" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="restauranteTelefone">Telefone</label>
+                        <input type="tel" id="restauranteTelefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="restauranteEndereco">Endereço</label>
+                        <textarea id="restauranteEndereco" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-save">Salvar Restaurante</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 11Frai - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

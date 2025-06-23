@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11Frai - Gerenciar Pedidos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>11Frai</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="principal.html">Início</a></li>
+                <li><a href="pedidos.html" class="active">Pedidos</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="/logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="crud-container">
+        <h2>Gerenciar Pedidos</h2>
+        
+        <div class="crud-actions">
+            <button class="btn-add" onclick="openModal('add')">Novo Pedido</button>
+            <input type="text" id="search" placeholder="Buscar pedido...">
+        </div>
+
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Itens</th>
+                    <th>Total</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1001</td>
+                    <td>João Silva</td>
+                    <td>X-Burger, Refri</td>
+                    <td>R$ 25,90</td>
+                    <td>10/11/2023</td>
+                    <td><span class="status preparing">Preparando</span></td>
+                    <td>
+                        <button class="btn-edit" onclick="openModal('edit', 1001)">Editar</button>
+                        <button class="btn-delete" onclick="confirmDelete(1001)">Excluir</button>
+                    </td>
+                </tr>
+                <!-- Mais linhas seriam adicionadas dinamicamente -->
+            </tbody>
+        </table>
+
+        <!-- Modal para adicionar/editar pedidos -->
+        <div id="pedidoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3 id="modalTitle">Novo Pedido</h3>
+                <form id="pedidoForm">
+                    <input type="hidden" id="pedidoId">
+                    <div class="form-group">
+                        <label for="cliente">Cliente</label>
+                        <select id="cliente" required>
+                            <option value="">Selecione um cliente</option>
+                            <option value="1">João Silva</option>
+                            <option value="2">Maria Souza</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Itens do Pedido</label>
+                        <div class="itens-pedido">
+                            <div class="item-row">
+                                <select class="item-select">
+                                    <option value="">Selecione um item</option>
+                                    <option value="1">X-Burger - R$ 15,90</option>
+                                    <option value="2">Pizza Média - R$ 35,90</option>
+                                    <option value="3">Refrigerante - R$ 7,90</option>
+                                </select>
+                                <input type="number" class="item-quantity" value="1" min="1">
+                                <button type="button" class="btn-remove-item">Remover</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-add-item" onclick="addItemRow()">Adicionar Item</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="observacoes">Observações</label>
+                        <textarea id="observacoes" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn-save">Salvar Pedido</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2023 11Frai - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

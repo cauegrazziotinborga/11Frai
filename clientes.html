@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11Frai - Gerenciar Clientes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <h1>11Frai</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="principal.html">Início</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="clientes.html" class="active">Clientes</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="/logout">Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="crud-container">
+        <h2>Gerenciar Clientes</h2>
+        
+        <div class="crud-actions">
+            <button class="btn-add" onclick="openClientModal('add')">Novo Cliente</button>
+            <input type="text" id="searchClient" placeholder="Buscar cliente...">
+        </div>
+
+        <table class="crud-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Pedidos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>João Silva</td>
+                    <td>(11) 99999-9999</td>
+                    <td>Rua Exemplo, 123</td>
+                    <td>5</td>
+                    <td>
+                        <button class="btn-edit" onclick="openClientModal('edit', 1)">Editar</button>
+                        <button class="btn-delete" onclick="confirmDeleteClient(1)">Excluir</button>
+                    </td>
+                </tr>
+                <!-- Mais linhas seriam adicionadas dinamicamente -->
+            </tbody>
+        </table>
+
+        <!-- Modal para adicionar/editar clientes -->
+        <div id="clienteModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeClientModal()">&times;</span>
+                <h3 id="clientModalTitle">Novo Cliente</h3>
+                <form id="clienteForm">
+                    <input type="hidden" id="clienteId">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço Completo</label>
+                        <textarea id="endereco" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-save">Salvar Cliente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2023 11Frai - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
