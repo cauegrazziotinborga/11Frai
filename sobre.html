@@ -4,20 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>11Frai - Sobre</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para a página Sobre */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .about-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about-section h2 {
+            color: #e63946;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .about-section h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffbe0b;
+            margin: 0.8rem auto;
+            border-radius: 2px;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+        }
+        
+        .team-section h3 {
+            color: #e63946;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .member {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid #ffbe0b;
+        }
+        
+        .member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .member h4 {
+            color: #e63946;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .member p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .member-role {
+            color: #e63946;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .about-section, .team-section {
+                padding: 1.5rem;
+            }
+            
+            .team-members {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
         <div class="logo">
             <h1>11Frai</h1>
+            <span id="restauranteAtual">Sobre Nós</span>
         </div>
         <nav class="main-nav">
             <ul>
                 <li><a href="principal.html">Início</a></li>
                 <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="restaurantes.html">Restaurantes</a></li>
                 <li><a href="clientes.html">Clientes</a></li>
                 <li><a href="sobre.html" class="active">Sobre</a></li>
-                <li><a href="/logout">Sair</a></li>
+                <li><a href="#" id="logout">Sair</a></li>
             </ul>
         </nav>
     </header>
@@ -27,16 +136,9 @@
             <h2>Sobre o 11Frai</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>O 11Frai é um restaurante especializado em lanches rápidos e deliciosos, com um sistema de delivery eficiente que garante a satisfação dos nossos clientes.</p>
-                    <p>Nossa missão é proporcionar a melhor experiência gastronômica com agilidade e qualidade, levando até você os sabores mais incríveis da região.</p>
-                    <h3>Nossa História</h3>
-                    <p>Fundado em 2015, o 11Frai começou como uma pequena lanchonete de bairro e hoje atende toda a cidade com nosso serviço de delivery.</p>
-                    <h3>Horário de Funcionamento</h3>
-                    <p>Segunda a Sábado: 18h às 23h</p>
-                    <p>Domingo: 19h às 22h</p>
-                </div>
-                <div class="about-image">
-                    <img src="../images/restaurante.jpg" alt="Restaurante 11Frai">
+                    <p>O 11Frai é um sistema inovador de agendamento de entregas desenvolvido especialmente para pizzarias e restaurantes de Fraiburgo. Nosso objetivo é oferecer uma solução prática e eficiente que revolucione a forma como os estabelecimentos gerenciam seus pedidos de delivery.</p>
+                    
+                    <p>Com tecnologia intuitiva, o sistema permite que os clientes façam seus pedidos e agendem o horário exato de entrega, proporcionando conveniência e flexibilidade. Para os estabelecimentos, oferecemos ferramentas poderosas para otimizar o fluxo de trabalho, reduzir atrasos e melhorar significativamente a organização interna.</p>
                 </div>
             </div>
         </section>
@@ -45,26 +147,29 @@
             <h3>Nossa Equipe</h3>
             <div class="team-members">
                 <div class="member">
-                    <img src="../images/chef1.jpg" alt="Chef">
-                    <h4>Carlos Frai</h4>
-                    <p>Chef Executivo</p>
+                    <h4>Cauê Grazziotin Borga</h4>
+                    <p>cauegrazziotinborga@gmail.com</p>
                 </div>
                 <div class="member">
-                    <img src="../images/chef2.jpg" alt="Chef">
-                    <h4>Ana Frai</h4>
-                    <p>Gerente de Operações</p>
+                    <h4>Ezequiel Collet Moreira Krenz</h4>
+                    <p>ezequielkrenz060@gmail.com</p>
                 </div>
                 <div class="member">
-                    <img src="../images/delivery.jpg" alt="Entregador">
-                    <h4>Pedro Entregas</h4>
-                    <p>Coordenador de Delivery</p>
+                    <h4>João Vitor Oliveira da Inhaia</h4>
+                    <p>jvzeris@gmail.com</p>
+                </div>
+                <div class="member">
+                    <h4>Samuel Collet Moreira Krenz</h4>
+                    <p>samuelkrenzifc@gmail.com</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2023 11Frai - Todos os direitos reservados</p>
+        <p>&copy; 2025 11Frai - Todos os direitos reservados</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
